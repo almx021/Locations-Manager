@@ -7,20 +7,20 @@ import jakarta.validation.constraints.Size;
 
 public class LocationRequestDTO {
     
-    @Size(max = 50, message = "Limite de 50 caracteres no campo `nome`.")
-    @NotBlank(message = "Campo `name` deve ser informado.")
+    @Size(max = 50, message = "The field `name` can have a maximum of {max} characters.")
+    @NotBlank(message = "The field `name` cannot be empty.")
     private String name;
 
-    @Size(max = 50, message = "Limite de 50 caracteres no campo `neighborhood`.")
-    @NotBlank(message = "Campo `neighborhood` deve ser informado.")
+    @Size(max = 50, message = "The field `neighborhood` can have a maximum of {max} characters.")
+    @NotBlank(message = "The field `neighborhood` cannot be empty.")
     private String neighborhood;
     
-    @Size(max = 50, message = "Limite de 50 caracteres no campo `city`.")
-    @NotBlank(message = "Campo `city` deve ser informado.")
+    @Size(max = 50, message = "The field `city` can have a maximum of {max} characters.")
+    @NotBlank(message = "The field `city` cannot be empty.")
     private String city;
 
-    @Size(max = 50, message = "Limite de 50 caracteres no campo `state`.")
-    @NotBlank(message = "Campo `state` deve ser informado.")
+    @Size(max = 50, message = "The field `state` can have a maximum of {max} characters.")
+    @NotBlank(message = "The field `state` cannot be empty.")
     private String state;
 
     public String getName() {
