@@ -36,7 +36,7 @@ public class LocationController {
     };
 
     @GetMapping("/{id}")
-    ResponseEntity<LocationDTO> getLocationById(@PathVariable @Positive Integer id) {
+    ResponseEntity<LocationDTO> getLocationById(@PathVariable @Positive(message = "ID must be a positive Integer.") Integer id) {
         LocationDTO dto = locationService.findLocationById(id);
         return ResponseEntity.ok().body(dto);
     }
@@ -55,13 +55,15 @@ public class LocationController {
     }
 
     @PutMapping("/{id}")
-    ResponseEntity<LocationDTO> updateLocation(@PathVariable @Positive Integer id, @RequestBody @Valid LocationRequestDTO locationRequestDTO) {
+    ResponseEntity<LocationDTO> updateLocation(
+        @PathVariable @Positive(message = "ID must be a positive Integer.") Integer id, @RequestBody @Valid LocationRequestDTO locationRequestDTO
+        ) {
         LocationDTO dto = locationService.updateLocation(id, locationRequestDTO);
         return ResponseEntity.ok().body(dto);
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<Void> deleteLocationById(@PathVariable @Positive Integer id) {
+    ResponseEntity<Void> deleteLocationById(@PathVariable @Positive(message = "ID must be a positive Integer.") Integer id) {
         locationService.deleteLocationById(id);
         return ResponseEntity.noContent().build();
     }

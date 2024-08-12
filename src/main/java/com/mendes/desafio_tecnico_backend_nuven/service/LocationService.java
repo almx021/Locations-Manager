@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.mendes.desafio_tecnico_backend_nuven.dto.LocationDTO;
 import com.mendes.desafio_tecnico_backend_nuven.dto.LocationRequestDTO;
 import com.mendes.desafio_tecnico_backend_nuven.dto.mapper.LocationMapper;
+import com.mendes.desafio_tecnico_backend_nuven.exception.LocationNotFoundException;
 import com.mendes.desafio_tecnico_backend_nuven.model.Location;
 import com.mendes.desafio_tecnico_backend_nuven.repository.LocationRepository;
 
@@ -31,7 +32,7 @@ public class LocationService {
 
     public LocationDTO findLocationById(Integer id) {
         Location targetLocation = locationRepository.findById(id)
-                                                    .orElseThrow(() -> new RuntimeException());
+                                                    .orElseThrow(() -> new LocationNotFoundException(id));
         return locationMapper.toDTO(targetLocation);
     }
 
@@ -42,7 +43,7 @@ public class LocationService {
 
     public LocationDTO updateLocation(Integer id, LocationRequestDTO locationRequestDTO) {
         Location targetLocation = locationRepository.findById(id)
-                                                    .orElseThrow(() -> new RuntimeException());
+                                                    .orElseThrow(() -> new LocationNotFoundException(id));
 
         targetLocation.setName(locationRequestDTO.getName());
         targetLocation.setNeighborhood(locationRequestDTO.getNeighborhood());
