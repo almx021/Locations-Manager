@@ -30,19 +30,19 @@ public class LocationController {
     LocationService locationService;
     
     @GetMapping
-    ResponseEntity<List<LocationDTO>> getAllLocations() {
+    public ResponseEntity<List<LocationDTO>> getAllLocations() {
         List<LocationDTO> dtos = locationService.findAllLocations();
         return ResponseEntity.ok().body(dtos);
     };
 
     @GetMapping("/{id}")
-    ResponseEntity<LocationDTO> getLocationById(@PathVariable @Positive(message = "ID must be a positive Integer.") Integer id) {
+    public ResponseEntity<LocationDTO> getLocationById(@PathVariable @Positive(message = "ID must be a positive Integer.") Integer id) {
         LocationDTO dto = locationService.findLocationById(id);
         return ResponseEntity.ok().body(dto);
     }
 
     @PostMapping
-    ResponseEntity<LocationDTO> createLocation(@RequestBody @Valid LocationRequestDTO locationRequestDTO) {
+    public ResponseEntity<LocationDTO> createLocation(@RequestBody @Valid LocationRequestDTO locationRequestDTO) {
         LocationDTO dto = locationService.saveLocation(locationRequestDTO);
 
         URI locationUri = ServletUriComponentsBuilder
@@ -55,7 +55,7 @@ public class LocationController {
     }
 
     @PutMapping("/{id}")
-    ResponseEntity<LocationDTO> updateLocation(
+    public ResponseEntity<LocationDTO> updateLocation(
         @PathVariable @Positive(message = "ID must be a positive Integer.") Integer id, @RequestBody @Valid LocationRequestDTO locationRequestDTO
         ) {
         LocationDTO dto = locationService.updateLocation(id, locationRequestDTO);
@@ -63,7 +63,7 @@ public class LocationController {
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<Void> deleteLocationById(@PathVariable @Positive(message = "ID must be a positive Integer.") Integer id) {
+    public ResponseEntity<Void> deleteLocationById(@PathVariable @Positive(message = "ID must be a positive Integer.") Integer id) {
         locationService.deleteLocationById(id);
         return ResponseEntity.noContent().build();
     }
