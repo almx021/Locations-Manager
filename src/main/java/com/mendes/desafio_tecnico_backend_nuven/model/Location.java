@@ -19,6 +19,20 @@ import jakarta.persistence.Table;
 @EntityListeners(AuditingEntityListener.class)
 public class Location {
     
+    public Location() {
+    }
+
+    public Location(Integer id, String name, String neighborhood, String city, String state, LocalDateTime createdAt,
+            LocalDateTime lastUpdatedAt) {
+        this.id = id;
+        this.name = name;
+        this.neighborhood = neighborhood;
+        this.city = city;
+        this.state = state;
+        this.createdAt = createdAt;
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="location_id")
@@ -47,6 +61,10 @@ public class Location {
     public Integer getId() {
         return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }    
 
     public String getName() {
         return name;
@@ -83,8 +101,16 @@ public class Location {
         return createdAt;
     }
 
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public LocalDateTime getLastUpdatedAt() {
         return lastUpdatedAt;
+    }
+
+    public void setLastUpdatedAt(LocalDateTime lastUpdatedAt) {
+        this.lastUpdatedAt = lastUpdatedAt;
     }
 
     @Override
