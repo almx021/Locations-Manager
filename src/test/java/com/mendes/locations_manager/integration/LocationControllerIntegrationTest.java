@@ -58,6 +58,7 @@ public class LocationControllerIntegrationTest {
     @Sql(scripts = "/data/data.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     public void whenGetLocationById_thenReturnOk() throws Exception {
         final Integer ID = 2;
+        
         mockMvc.perform(get(String.format("%s/%s", PATH_END_POINT, ID)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(ID))
@@ -81,6 +82,7 @@ public class LocationControllerIntegrationTest {
     @Test
     public void whenGetLocationByIdWithLocationNotFound_thenReturnNotFound() throws Exception {
         final Integer ID = 1;
+
         mockMvc.perform(get(String.format("%s/%s", PATH_END_POINT, ID)))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.errors").value(String.format("Location with ID %s not found.", ID)));
@@ -97,16 +99,16 @@ public class LocationControllerIntegrationTest {
             locationRequestDTO.setCity("Test city");
             locationRequestDTO.setState("Test state");
 
-            mockMvc.perform(post(PATH_END_POINT)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(locationRequestDTO)))
-                    .andExpect(status().isCreated())
-                    .andExpect(header().string("Location", LOCATION))
-                    .andExpect(jsonPath("$.id").value(ID))
-                    .andExpect(jsonPath("$.name").value(locationRequestDTO.getName()))
-                    .andExpect(jsonPath("$.neighborhood").value(locationRequestDTO.getNeighborhood()))
-                    .andExpect(jsonPath("$.city").value(locationRequestDTO.getCity()))
-                    .andExpect(jsonPath("$.state").value(locationRequestDTO.getState()));
+        mockMvc.perform(post(PATH_END_POINT)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(locationRequestDTO)))
+                .andExpect(status().isCreated())
+                .andExpect(header().string("Location", LOCATION))
+                .andExpect(jsonPath("$.id").value(ID))
+                .andExpect(jsonPath("$.name").value(locationRequestDTO.getName()))
+                .andExpect(jsonPath("$.neighborhood").value(locationRequestDTO.getNeighborhood()))
+                .andExpect(jsonPath("$.city").value(locationRequestDTO.getCity()))
+                .andExpect(jsonPath("$.state").value(locationRequestDTO.getState()));
     }
 
     @Test
@@ -126,6 +128,7 @@ public class LocationControllerIntegrationTest {
     @Test
     public void whenPostLocationWithInvalidField_thenReturnBadRequest() throws Exception {
         final Integer MAX = 50;
+
         LocationRequestDTO locationRequestDTO = new LocationRequestDTO();
             locationRequestDTO.setName("Test name");
             locationRequestDTO.setNeighborhood("Test neigborhood");
@@ -149,20 +152,21 @@ public class LocationControllerIntegrationTest {
             locationRequestDTO.setCity("Test city 1");
             locationRequestDTO.setState("Test state 1");
 
-            mockMvc.perform(put(String.format("%s/%s", PATH_END_POINT, ID))
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(locationRequestDTO)))
-                    .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.id").value(ID))
-                    .andExpect(jsonPath("$.name").value(locationRequestDTO.getName()))
-                    .andExpect(jsonPath("$.neighborhood").value(locationRequestDTO.getNeighborhood()))
-                    .andExpect(jsonPath("$.city").value(locationRequestDTO.getCity()))
-                    .andExpect(jsonPath("$.state").value(locationRequestDTO.getState()));
+        mockMvc.perform(put(String.format("%s/%s", PATH_END_POINT, ID))
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(locationRequestDTO)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(ID))
+                .andExpect(jsonPath("$.name").value(locationRequestDTO.getName()))
+                .andExpect(jsonPath("$.neighborhood").value(locationRequestDTO.getNeighborhood()))
+                .andExpect(jsonPath("$.city").value(locationRequestDTO.getCity()))
+                .andExpect(jsonPath("$.state").value(locationRequestDTO.getState()));
     }
 
     @Test
     public void whenUpdateLocationWithMissingField_thenReturnBadRequest() throws Exception {
         final Integer ID = 1;
+
         LocationRequestDTO locationRequestDTO = new LocationRequestDTO();
             locationRequestDTO.setName("Test name");
             locationRequestDTO.setCity("Test city");
@@ -179,6 +183,7 @@ public class LocationControllerIntegrationTest {
     public void whenUpdateLocationWithInvalidField_thenReturnBadRequest() throws Exception {
         final Integer ID = 1;
         final Integer MAX = 50;
+
         LocationRequestDTO locationRequestDTO = new LocationRequestDTO();
             locationRequestDTO.setName("Test name");
             locationRequestDTO.setNeighborhood("Test neigborhood");
@@ -233,6 +238,7 @@ public class LocationControllerIntegrationTest {
     @Test
     public void whenDeleteLocationById_thenReturnNoContent() throws Exception {
         final Integer ID = 1;
+
         mockMvc.perform(delete(String.format("%s/%s", PATH_END_POINT, ID)))
                 .andExpect(status().isNoContent());
     }
