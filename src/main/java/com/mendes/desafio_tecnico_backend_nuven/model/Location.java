@@ -14,6 +14,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Represents a location entity.
+ * 
+ * <p>This class maps to the {@code tb_locations} table in the database and represents a physical location with a name,
+ * neighborhood, city, state, creation timestamp and last update timestamp.</p>
+ */
 @Entity
 @Table(name="tb_locations")
 @EntityListeners(AuditingEntityListener.class)

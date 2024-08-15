@@ -4,6 +4,11 @@ import java.time.LocalDateTime;
 
 import com.mendes.desafio_tecnico_backend_nuven.model.Location;
 
+/**
+ * Data Transfer Object (DTO) for {@link Location} entity.
+ * 
+ * <p> This DTO is used to transfer data between layers of the application.
+ */
 public class LocationDTO {
         
     private Integer id;

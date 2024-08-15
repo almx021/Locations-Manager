@@ -5,6 +5,11 @@ import com.mendes.desafio_tecnico_backend_nuven.model.Location;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+/**
+ * Data Transfer Object (DTO) for location creation and update requests.
+ * 
+ * <p>This DTO is used to transfer data from the client to the server when creating or updating a location.</p>
+ */
 public class LocationRequestDTO {
     
     @Size(max = 50, message = "The field `name` can have a maximum of {max} characters.")
