@@ -1,0 +1,2 @@
+INSERT INTO tb_locations (name, neighborhood, city, state, created_at, updated_at) VALUES ('Test name 1', 'Test neighborhood 1', 'Test city 1', 'Test state 1', '2024-08-01 00:01:00', '2024-08-14 00:01:00');
+INSERT INTO tb_locations (name, neighborhood, city, state, created_at, updated_at) VALUES ('Test name 2', 'Test neighborhood 2', 'Test city 2', 'Test state 2', '2024-08-01 00:00:00', '2024-08-14 00:00:00');
