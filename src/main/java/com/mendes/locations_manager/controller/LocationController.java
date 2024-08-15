@@ -170,6 +170,11 @@ public class LocationController {
                 content = @Content
             ),
             @ApiResponse(
+                description = "Validation error: Invalid ID was sent",
+                responseCode = "400",
+                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseError.class))
+            ),
+            @ApiResponse(
                 description = "Internal server error", 
                 responseCode = "500", 
                 content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseError.class))
