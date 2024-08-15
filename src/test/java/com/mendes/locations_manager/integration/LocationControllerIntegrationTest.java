@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.integration;
+package com.mendes.locations_manager.integration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationRequestDTO;
+import com.mendes.locations_manager.dto.LocationRequestDTO;
 
 @SpringBootTest
 @AutoConfigureMockMvc

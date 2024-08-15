@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.controller;
+package com.mendes.locations_manager.controller;
 
 import java.net.URI;
 import java.util.List;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationDTO;
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationRequestDTO;
-import com.mendes.desafio_tecnico_backend_nuven.exception.ResponseError;
-import com.mendes.desafio_tecnico_backend_nuven.service.LocationService;
+import com.mendes.locations_manager.dto.LocationDTO;
+import com.mendes.locations_manager.dto.LocationRequestDTO;
+import com.mendes.locations_manager.exception.ResponseError;
+import com.mendes.locations_manager.service.LocationService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

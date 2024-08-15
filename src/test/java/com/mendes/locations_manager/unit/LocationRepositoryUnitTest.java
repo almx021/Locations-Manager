@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.unit;
+package com.mendes.locations_manager.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -13,8 +13,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
 
-import com.mendes.desafio_tecnico_backend_nuven.model.Location;
-import com.mendes.desafio_tecnico_backend_nuven.repository.LocationRepository;
+import com.mendes.locations_manager.model.Location;
+import com.mendes.locations_manager.repository.LocationRepository;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)

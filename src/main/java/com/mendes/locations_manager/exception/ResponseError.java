@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.exception;
+package com.mendes.locations_manager.exception;
 
 import java.time.LocalDateTime;
 import java.util.List;

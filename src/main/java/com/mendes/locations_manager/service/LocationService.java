@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.service;
+package com.mendes.locations_manager.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,12 +6,12 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationDTO;
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationRequestDTO;
-import com.mendes.desafio_tecnico_backend_nuven.dto.mapper.LocationMapper;
-import com.mendes.desafio_tecnico_backend_nuven.exception.LocationNotFoundException;
-import com.mendes.desafio_tecnico_backend_nuven.model.Location;
-import com.mendes.desafio_tecnico_backend_nuven.repository.LocationRepository;
+import com.mendes.locations_manager.dto.LocationDTO;
+import com.mendes.locations_manager.dto.LocationRequestDTO;
+import com.mendes.locations_manager.dto.mapper.LocationMapper;
+import com.mendes.locations_manager.exception.LocationNotFoundException;
+import com.mendes.locations_manager.model.Location;
+import com.mendes.locations_manager.repository.LocationRepository;
 
 /**
  * Service Layer responsible for operations related to locations.

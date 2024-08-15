@@ -1,12 +1,12 @@
-package com.mendes.desafio_tecnico_backend_nuven.dto.mapper;
+package com.mendes.locations_manager.dto.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationRequestDTO;
-import com.mendes.desafio_tecnico_backend_nuven.dto.LocationDTO;
-import com.mendes.desafio_tecnico_backend_nuven.model.Location;
+import com.mendes.locations_manager.dto.LocationRequestDTO;
+import com.mendes.locations_manager.dto.LocationDTO;
+import com.mendes.locations_manager.model.Location;
 
 @Component
 public class LocationMapper {

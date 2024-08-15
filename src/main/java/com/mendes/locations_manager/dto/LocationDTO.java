@@ -1,8 +1,8 @@
-package com.mendes.desafio_tecnico_backend_nuven.dto;
+package com.mendes.locations_manager.dto;
 
 import java.time.LocalDateTime;
 
-import com.mendes.desafio_tecnico_backend_nuven.model.Location;
+import com.mendes.locations_manager.model.Location;
 
 /**
  * Data Transfer Object (DTO) for {@link Location} entity.

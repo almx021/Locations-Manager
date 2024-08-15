@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.model;
+package com.mendes.locations_manager.model;
 
 import java.time.LocalDateTime;
 

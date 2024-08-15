@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mendes</groupId>
-	<artifactId>desafio-tecnico-backend-nuven</artifactId>
+	<artifactId>locations-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>desafio-tecnico-backend-nuven</name>
+	<name>locations-manager</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.exception;
+package com.mendes.locations_manager.exception;
 
 public class LocationNotFoundException extends RuntimeException {
     public LocationNotFoundException(Integer id) {

@@ -1,6 +1,6 @@
-package com.mendes.desafio_tecnico_backend_nuven.dto;
+package com.mendes.locations_manager.dto;
 
-import com.mendes.desafio_tecnico_backend_nuven.model.Location;
+import com.mendes.locations_manager.model.Location;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

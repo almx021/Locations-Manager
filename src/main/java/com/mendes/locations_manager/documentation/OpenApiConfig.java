@@ -1,4 +1,4 @@
-package com.mendes.desafio_tecnico_backend_nuven.documentation;
+package com.mendes.locations_manager.documentation;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
